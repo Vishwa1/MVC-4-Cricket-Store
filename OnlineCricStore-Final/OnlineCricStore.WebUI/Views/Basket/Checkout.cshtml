@@ -1,0 +1,70 @@
+﻿@model CricStore.Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Check out now </h2>
+
+Please Enter your details and we'll ship your items right away!
+
+@using (Html.BeginForm())
+{ 
+    
+    <h3>Ship to</h3>
+    @Html.AntiForgeryToken()
+    <div> Enter Name:<br />
+         @Html.TextBoxFor(x => x.Name)
+        <br />
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    
+    <div> Address Line 1:<br />
+         @Html.TextBoxFor(x => x.Line1)
+        <br />
+         @Html.ValidationMessageFor(m => m.Line1)
+    </div>
+    
+    <div> Address Line 2: <br />
+         @Html.TextBoxFor(x => x.Line2)
+    </div>
+    
+    <div> Address Line 3: <br /> 
+        @Html.TextBoxFor(x => x.Line3)
+    </div>
+    
+    <div>City: <br />
+         @Html.TextBoxFor(x => x.City)
+        <br />
+        @Html.ValidationMessageFor(m => m.City)
+    </div>
+    
+    <div>State:<br />
+         @Html.TextBoxFor(x => x.State)
+        <br />
+        @Html.ValidationMessageFor(m => m.State)
+    </div>
+    
+    <div>Zip Code: <br />
+        @Html.TextBoxFor(x => x.Zip)
+    </div>
+    
+    <div>Country: <br />
+         @Html.TextBoxFor(x => x.Country)
+        <br />
+        @Html.ValidationMessageFor(m => m.Country)
+    </div>
+    
+    <h3>Options</h3>
+    <label>
+        @Html.EditorFor(x => x.GiftWrap)
+        Gift Wrap these items
+    </label>
+    
+    <p align ="center">
+        <input type="submit" class="btn btn-primary" value="Complete Order" />
+       @* @Html.ActionLink("Complete Order", "CompletedOrder", "Basket")*@
+        @*<input class="actionButtons" type="submit" value="Order Now" onclick="location.href='@Url.Action("CompletedOrder", "Basket", new object { }, null)'" />*@
+    </p>
+}
+

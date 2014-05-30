@@ -1,0 +1,74 @@
+﻿@model OnlineCricStore.WebUI.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    @*<h2>Create a new account.</h2>*@
+</hgroup>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+     
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)<br />
+                @Html.TextBoxFor(m => m.UserName, new { @placeholder = "Enter Desired UserName" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserFirstName)<br />
+                @Html.TextBoxFor(m => m.UserFirstName, new { @placeholder = "Enter First Name" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserFirstName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserLastName)<br />
+                @Html.TextBoxFor(m => m.UserLastName, new { @placeholder = "Enter Last Name" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserLastName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserEmail)<br />
+                @Html.TextBoxFor(m => m.UserEmail, new { @placeholder = "Enter Email" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserEmail)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)<br />
+                @Html.PasswordFor(m => m.Password, new { @placeholder = "Enter Password" })
+                <br />
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)<br />
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
+                <br />
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserMobile)<br />
+                @Html.TextBoxFor(m => m.UserMobile, new { @placeholder = "Enter Mobile" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserMobile)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.UserCity) <br />
+                @Html.TextBoxFor(m => m.UserCity, new { @placeholder = "Enter City" })
+                <br />
+                @Html.ValidationMessageFor(m => m.UserCity)
+            </li>
+        </ol>
+        <input type="submit" class="btn btn-primary" value="Register" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

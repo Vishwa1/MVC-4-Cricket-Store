@@ -1,0 +1,53 @@
+﻿@model OnlineCricStore.WebUI.Models.ContactModel
+@{
+    ViewBag.Title = "Contact Us";
+}
+<hgroup class="title">
+    <h1>Contact Us</h1>
+   
+</hgroup>
+
+<section class="contact">
+    <section id="ContactForm" style="float:left;width: 51%;padding: 1%;border: 1px solid #333;min-height: 356px;">
+        <br /><br />
+<h2><b>Contact Form</b></h2>
+        <br /><br />
+@using (Html.BeginForm()) {
+   
+    <div class="error" style="color:#0EA008">@ViewBag.SuccessMessage</div>
+    <fieldset>
+       
+        <ol>
+            
+            <li style="text-align:left">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @style = "width: 78%; margin-left: 10% " })
+                <br />
+                @Html.ValidationMessageFor(m => m.Name)
+            </li>
+            <li style="text-align:left">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @style = "width: 78%; margin-left: 10% " })
+                <br />
+                @Html.ValidationMessageFor(m => m.Email)
+            </li>
+            <li style="text-align:left">
+                @Html.LabelFor(m => m.Message)
+                @Html.TextAreaFor(m => m.Message, new { @style = "width: 78%; margin-left: 5% "})
+                <br />
+                @Html.ValidationMessageFor(m => m.Message)
+            </li>
+        </ol>
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </fieldset>
+    
+}
+</section>
+
+    <section id="Contactmap" style="float:right;width:48%;">
+<iframe width="90%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?q=salt+lake+sec+1+ce181&amp;ie=UTF8&amp;hq=&amp;hnear=CE-181,+Sector-1,+Salt+Lake+City,+Kolkata,+West+Bengal&amp;t=m&amp;z=14&amp;ll=22.595424,88.414333&amp;output=embed"></iframe>
+
+</section>
+    
+  
+</section>

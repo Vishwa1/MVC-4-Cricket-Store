@@ -1,0 +1,141 @@
+﻿
+<div class="container">
+    <ul id="nav">
+        <li><a href="/Home/Index">Home</a></li>
+        <li>
+            <a href="#">Bats</a>
+            <span id="s1"></span>
+            <ul class="subs">
+                <li>
+                    <ul>
+                        <li>
+                            <a href="/Product/BrandList/1">
+                                @Html.ActionLink("Adidas", "BrandList", "Product", new { BrandId = 1 }, null)
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/Product/BrandList/2">
+                                @Html.ActionLink("Gray-Nicolls", "BrandList", "Product", new { BrandId = 2 }, null)
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/Product/BrandList/3">
+                            	 @Html.ActionLink("Kookaburra", "BrandList", "Product", new { BrandId = 3 }, null)
+                          </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Ball</a>
+            <span id="s1"></span>
+            <ul class="subs">
+                <li>
+
+                    <ul>
+                        <li>
+                            <a href="/Product/BrandList/4">
+                                @Html.ActionLink("KookaBurra", "BrandList", "Product", new { BrandId = 4 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/5">
+                                @Html.ActionLink("GM Balls", "BrandList", "Product", new { BrandId = 5 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/6">
+                                @Html.ActionLink("SG Balls", "BrandList", "Product", new { BrandId = 6 }, null)
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#s1">Accessories</a>
+            <span id="s1"></span>
+            <ul class="subs">
+                <li>
+
+                    <ul>
+                        <li>
+                            <a href="/Product/BrandList/7">
+                                @Html.ActionLink("Thigh Pads", "BrandList", "Product", new { BrandId = 7 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/8">
+                                @Html.ActionLink("Gloves", "BrandList", "Product", new { BrandId = 8 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/9">
+                                @Html.ActionLink("Helmets", "BrandList", "Product", new { BrandId = 9 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/10">
+                                @Html.ActionLink("Bat Cover", "BrandList", "Product", new { BrandId = 10 }, null)
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+
+                    <ul>
+                        <li>
+                            <a href="/Product/BrandList/11">
+                                @Html.ActionLink("Leg Guards", "BrandList", "Product", new { BrandId = 11 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/12">
+                                @Html.ActionLink("Shoes", "BrandList", "Product", new { BrandId = 12 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/13">
+                                @Html.ActionLink("Sunglasses", "BrandList", "Product", new { BrandId = 13 }, null)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/BrandList/14">
+                                @Html.ActionLink("Cricket Clothing", "BrandList", "Product", new { BrandId = 14 }, null)
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="active">
+            <a href="#s2">Brands</a>
+            <span id="s2"></span>
+            <ul class="subs">
+                <li>
+                    <ul>
+                        <li>@Html.ActionLink("Adidas", "SearchByBrand", "Search", new { SearchString = "Adidas" }, null)</li>
+                        <li>@Html.ActionLink("Nike", "SearchByBrand", "Search", new { SearchString = "Nike" }, null)</li>
+                        <li>@Html.ActionLink("MRF", "SearchByBrand", "Search", new { SearchString = "MRF" }, null)</li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>@Html.ActionLink("CA", "SearchByBrand", "Search", new { SearchString = "CA" }, null)</li>
+                        <li>@Html.ActionLink("GM", "SearchByBrand", "Search", new { SearchString = "GM" }, null)</li>
+                        <li>@Html.ActionLink("SG", "SearchByBrand", "Search", new { SearchString = "SG" }, null)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Career", "Career", "Home")</li>
+    </ul>
+</div>

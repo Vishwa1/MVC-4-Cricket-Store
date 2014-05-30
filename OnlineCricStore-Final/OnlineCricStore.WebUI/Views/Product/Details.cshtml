@@ -1,0 +1,54 @@
+﻿@model CricStore.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+<div style="text-align:left;">
+    <div style="text-align:center;">
+<h2>Details</h2>
+</div>
+<fieldset>
+     <div class="display-field" style="float:left; width:20%;margin-left: 15%;">
+         <img src="@Url.Content(String.Format(@Model.ThumbnailPath))" alt="@Html.DisplayFor(model => model.ProductName)" width="100%" />
+       @* @Html.DisplayFor(model =>  model.ThumbnailPath)*@
+    </div>
+    <div style="float:right; width: 50%;margin-right:10%;margin-top: 3%;">
+    <legend>Product</legend>
+    <div class="display-label" style="float:left; width:35%;">
+        @Html.DisplayNameFor(model => model.ProductName)
+    </div>
+    <div class="display-field" style="float:right; width:65%;">
+        @Html.DisplayFor(model => model.ProductName)
+    </div>
+
+   @* <div class="display-label">
+        @Html.DisplayNameFor(model => model.ThumbnailPath)
+    </div>*@
+   
+
+    <div class="display-label" style="float:left; width:35%;">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+
+    <div class="display-field" style="float:right; width:65%;">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div class="display-label" style="float:left; width:35%;">
+        @Html.DisplayNameFor(model => model.price)
+    </div>
+    <div class="display-field" style="float:right; width:65%;">
+        @Html.DisplayFor(model => model.price)
+    </div>
+        <br /><br /><br><br>
+    @using (Html.BeginForm("AddToBasket", "Basket"))
+    {
+        @Html.HiddenFor(x => x.ProductId)
+        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+    <input class="btn btn-primary" type="submit" value="Add to Basket" />
+    }
+        @Html.ActionLink("Back to List", "List")
+</fieldset>
+
+
+
+</div>
